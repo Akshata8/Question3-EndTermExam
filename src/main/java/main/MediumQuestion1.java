@@ -24,15 +24,18 @@ abstract Double getBillAmount(Double amt);
 
 }
 
-class SeniorCitizenCustomer extends Customer {
+class SeniorCitizenCustomer extends Customer
+{
 
 	SeniorCitizenCustomer(String name, String address, Integer age, String mobile) {
 		super(name, address, age, mobile);
 	}
 	
-	Double getBillAmount(Double amount) {
-		Double bill =null; //edit as per the question
+	 Double getBillAmount(Double amount) {
+		
+		Double bill=0.9*amount; //edit as per the question
 		//Write your code here of required
+		
 		return bill;
 	}
 
@@ -42,9 +45,13 @@ class PrivilegeCustomer extends Customer {
 	PrivilegeCustomer(String name, String address, Integer age, String mobile) {
 			super(name, address, age, mobile);
 		}
-		Double getBillAmount(Double amount) {
-			Double bill = null; //edit as per the Question 
+	 Double getBillAmount(Double amount) {
+		
+			
+		 Double bill=0.3*amount; 
+			//Double billAmt = cust.getBillAmount(purchasedAmt);//edit as per the Question 
 			//write your code here if required.
+		 bill=amount-bill;
 			return bill;
 		}
 }
@@ -106,9 +113,10 @@ public static void takeInput() {
 		
 		phn = in.nextLine();
 		
-		System.out.println("Enter the purchased amount: ");
+		//System.out.println("Enter the purchased amount: ");
 		
 		purchasedAmt = in.nextDouble();
+		System.out.println("Enter the purchased amount: ");
 
 	}
 
